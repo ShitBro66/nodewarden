@@ -31,10 +31,10 @@ class_name = "BackupTransferRunner"
 binding = "ATTACHMENTS"
 bucket_name = "nodewarden-attachments"
 
-[[migrations]]
-tag = "v1-notifications-hub"
-new_sqlite_classes = [ "NotificationsHub" ]
+[exports.NotificationsHub]
+type = "durable-object"
+storage = "sqlite"
 
-[[migrations]]
-tag = "v2-backup-transfer-runner"
-new_sqlite_classes = [ "BackupTransferRunner" ]
+[exports.BackupTransferRunner]
+type = "durable-object"
+storage = "sqlite"
